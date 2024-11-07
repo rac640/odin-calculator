@@ -36,3 +36,16 @@ let secondNumber;
 function operate (firstNumber,operator,secondNumber){
 additionFunction(firstNumber,secondNumber);
 }
+
+
+/* Create the functions that populate the display when you click the digit buttons.
+ You should store the content of the display (the number) in a variable for use in the next step.
+ */
+
+// on the button click, it should put the number 
+
+
+
+
+
+

@@ -1,0 +1,11 @@
+div, button{
+border: 3px solid black;
+}
+
+.numberButtons{
+    width: 10px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+
