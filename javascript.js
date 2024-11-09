@@ -42,10 +42,8 @@ additionFunction(firstNumber,secondNumber);
  You should store the content of the display (the number) in a variable for use in the next step.
  */
 
-/* 
 
-3. Finally, it should save the displayed number in a variable. 
-*/
+
 const numberButton = document.querySelectorAll(".numberButtons");
 
 const displayBoard = document.querySelector("#display");
@@ -61,8 +59,14 @@ numberButton.forEach((button)=>{
 */
   const numberContainer = document.createElement("div");
     numberContainer.textContent = button.textContent;
-//   numberContainer.appendChild(chosenNumber);
   displayBoard.appendChild(numberContainer);
+
+
+  /* 
+3. Finally, it should save the displayed number in a variable. 
+
+TEST OUT: Console logging numberContainer.textContent = button.textContent, and create variable for this + console logging. 
+*/
    
     });
 
