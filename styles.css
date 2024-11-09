@@ -9,3 +9,9 @@ border: 3px solid black;
   margin: 20px;
 }
 
+#display{
+
+    display: flex;
+    height: 20px;
+    
+}

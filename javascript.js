@@ -42,7 +42,34 @@ additionFunction(firstNumber,secondNumber);
  You should store the content of the display (the number) in a variable for use in the next step.
  */
 
-// on the button click, it should put the number 
+/* 
+
+3. Finally, it should save the displayed number in a variable. 
+*/
+const numberButton = document.querySelectorAll(".numberButtons");
+
+const displayBoard = document.querySelector("#display");
+
+numberButton.forEach((button)=>{
+
+    button.addEventListener("click", ()=>{
+  
+  /*When button is clicked, it should append a div/p inside of the DisplayBoard. 
+  Inside of this div should have the text button's text content. 
+  
+  Code below inspired by: https://stackoverflow.com/questions/27079598/error-failed-to-execute-appendchild-on-node-parameter-1-is-not-of-type-no
+*/
+  const numberContainer = document.createElement("div");
+    numberContainer.textContent = button.textContent;
+//   numberContainer.appendChild(chosenNumber);
+  displayBoard.appendChild(numberContainer);
+   
+    });
+
+});
+
+
+
 
 
 
