@@ -4,21 +4,22 @@
  find on calculators, so start by creating functions for the following items and testing them in your browser’s console:
 */
 function additionFunction (a,b){
-    isNaN(a) || isNaN(b) ?   console.log( "nope!"): console.log(a + b);
+   console.log(a + b);
 }
 
 function subtractFunction (a,b){
-    isNaN(a) || isNaN(b) ?   console.log( "nope!"): console.log(a - b);
+    console.log(a - b);
 
 }
 
 function multiplyFunction (a,b){
-    isNaN(a) || isNaN(b) ?   console.log( "nope!"): console.log(a * b);
+    console.log(a * b);
 
 }
 
 function divideFunction (a,b){
-    isNaN(a) || isNaN(b) ?   console.log( "nope!"): console.log(a/b);
+  b == 0 ? console.log("error: can't divide by 0"):console.log(a/b);
+
 
 }
 
@@ -34,8 +35,15 @@ let secondNumber;
 // Create a new function operate that takes an operator and two numbers and then calls one of the above functions on the numbers.
 
 function operate (firstNumber,operator,secondNumber){
-additionFunction(firstNumber,secondNumber);
+// if operator is "+", it should run addition function. 
+ if (operator == "+") return additionFunction(firstNumber, secondNumber);
+ else if (operator =="-") return subtractFunction(firstNumber, secondNumber);
+ else if (operator =="/") return divideFunction(firstNumber, secondNumber);
+ else if (operator =="*") return multiplyFunction(firstNumber, secondNumber);
+
 }
+
+operate (2, "/" , 0);
 
 
 /* Create the functions that populate the display when you click the digit buttons.
@@ -43,10 +51,10 @@ additionFunction(firstNumber,secondNumber);
  */
 
 
-
 const numberButton = document.querySelectorAll(".numberButtons");
 
 const displayBoard = document.querySelector("#display");
+
 
 numberButton.forEach((button)=>{
 
@@ -59,16 +67,25 @@ numberButton.forEach((button)=>{
 */
   const numberContainer = document.createElement("div");
     numberContainer.textContent = button.textContent;
-  displayBoard.appendChild(numberContainer);
+  let displayedNumber = displayBoard.appendChild(numberContainer);
 
+  
 
-  /* 
-3. Finally, it should save the displayed number in a variable. 
+   /* 
+    3. Finally, it should save the displayed number in a variable. 
+    */
 
-TEST OUT: Console logging numberContainer.textContent = button.textContent, and create variable for this + console logging. 
-*/
+  let finalDisplayedNumber = displayBoard.textContent;
+
+  console.log(finalDisplayedNumber);
+
    
     });
+
+
+
+   
+    
 
 });
 
