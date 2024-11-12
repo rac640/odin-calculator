@@ -43,7 +43,6 @@ function operate (firstNumber,operator,secondNumber){
 
 }
 
-operate (2, "/" , 0);
 
 
 /* Create the functions that populate the display when you click the digit buttons.
@@ -55,12 +54,12 @@ const numberButton = document.querySelectorAll(".numberButtons");
 
 const displayBoard = document.querySelector("#display");
 
-
+//  for each number button, when clicked, populate the display. 
 numberButton.forEach((button)=>{
 
     button.addEventListener("click", ()=>{
   
-  /*When button is clicked, it should append a div/p inside of the DisplayBoard. 
+  /*When the number buttons are clicked, it should append a div/p inside of the DisplayBoard. 
   Inside of this div should have the text button's text content. 
   
   Code below inspired by: https://stackoverflow.com/questions/27079598/error-failed-to-execute-appendchild-on-node-parameter-1-is-not-of-type-no
@@ -68,26 +67,47 @@ numberButton.forEach((button)=>{
   const numberContainer = document.createElement("div");
     numberContainer.textContent = button.textContent;
   let displayedNumber = displayBoard.appendChild(numberContainer);
-
-  
-
    /* 
     3. Finally, it should save the displayed number in a variable. 
     */
 
+
+    // This represents the first number
   let finalDisplayedNumber = displayBoard.textContent;
 
+  firstNumber = finalDisplayedNumber;
   console.log(finalDisplayedNumber);
 
-   
+
+
+
+
     });
 
-
-
-   
-    
-
 });
+
+
+/* Steps for Addition Button 
+1. Save entered Value as first number. 
+2. clear displayBoard when user enters number.
+3. User Enters Number, which should be saved in second Number variable for the next step of when user presses the equals button. 
+*/
+
+let additionButton = document.getElementById("additionButton");
+
+additionButton.addEventListener("click", ()=>{
+  // Test to see if first Number is stored, and it is. 
+  console.log(firstNumber);
+});
+
+
+
+
+// 
+
+let equalsButton = document.getElementById("equalsButton");
+
+
 
 
 
