@@ -62,9 +62,15 @@ numberButton.forEach((button)=>{
    I should reference firstDisplayBoard; if firstDisplayBoard[i] +1 or greater = 0, don't display.
    Pseudocode: while the user clicks zero as the first number, keep clearing the display board and putting zero. 
    
-   (while/if firstDisplayBoard.firstChild.textContent == 0, )
-
+    create a function to remove leading zeros: https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/# 
   */
+
+    function removeLeadingZeros(input) {
+      console.log( Number(input).toString());
+  }
+
+  removeLeadingZeros(firstDisplayedNumber);
+
   console.log(firstDisplayBoard.firstChild);
   console.log("first Number:" + firstDisplayedNumber);
 
