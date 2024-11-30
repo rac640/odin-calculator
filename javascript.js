@@ -44,6 +44,13 @@ const secondDisplayBoard = document.createElement("div");
 displayBoard.appendChild(firstDisplayBoard);
 
 
+  //  create a function to remove leading zeros: https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/# 
+
+function removeLeadingZeros(input) {
+  return Number(input).toString();
+}
+
+
 //  for each number button, when clicked, populate the display. 
 numberButton.forEach((button)=>{
   // example: when clicking 1, create a div containing 1 on the display. 
@@ -55,10 +62,7 @@ numberButton.forEach((button)=>{
   firstDisplayBoard.appendChild(numberContainer);
 
 
-  //  create a function to remove leading zeros: https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/# 
-function removeLeadingZeros(input) {
-  return Number(input).toString();
-}
+
   let firstClickedNumber = removeLeadingZeros(firstDisplayBoard.textContent);
   let finalFirstNumber = removeLeadingZeros(firstClickedNumber);
   firstDisplayBoard.textContent = finalFirstNumber;
@@ -74,13 +78,13 @@ else{
  
  if (secondNumber == undefined) {firstDisplayBoard.textContent = ""} ;
 
+  secondDisplayBoard.appendChild(numberContainer);
+  
+  displayBoard.appendChild(secondDisplayBoard);
+  
+  secondNumber = removeLeadingZeros(secondDisplayBoard.textContent);
 
-secondDisplayBoard.appendChild(numberContainer);
-displayBoard.appendChild(secondDisplayBoard);
-
-secondNumber = secondDisplayBoard.textContent;
-console.log("second Number:" + secondNumber);
-
+  console.log("second Number:" + secondNumber);
 }
 
 });
