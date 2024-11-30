@@ -53,7 +53,8 @@ numberButton.forEach((button)=>{
   
   if (operatorClick == false ){
   firstDisplayBoard.appendChild(numberContainer);
-  let firstDisplayedNumber = firstDisplayBoard.textContent;
+  let firstDisplayedNumber = removeLeadingZeros(firstDisplayBoard.textContent);
+
   firstNumber = firstDisplayedNumber;
 
 
@@ -66,10 +67,12 @@ numberButton.forEach((button)=>{
   */
 
     function removeLeadingZeros(input) {
-      console.log( Number(input).toString());
+      return Number(input).toString();
   }
 
-  removeLeadingZeros(firstDisplayedNumber);
+  let finalFirstNumber = removeLeadingZeros(firstDisplayedNumber);
+
+  firstDisplayBoard.textContent = finalFirstNumber;
 
   console.log(firstDisplayBoard.firstChild);
   console.log("first Number:" + firstDisplayedNumber);
