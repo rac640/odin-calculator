@@ -53,31 +53,22 @@ numberButton.forEach((button)=>{
   
   if (operatorClick == false ){
   firstDisplayBoard.appendChild(numberContainer);
-  let firstDisplayedNumber = removeLeadingZeros(firstDisplayBoard.textContent);
-
-  firstNumber = firstDisplayedNumber;
 
 
-  /*
-
-   I should reference firstDisplayBoard; if firstDisplayBoard[i] +1 or greater = 0, don't display.
-   Pseudocode: while the user clicks zero as the first number, keep clearing the display board and putting zero. 
-   
-    create a function to remove leading zeros: https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/# 
-  */
-
-    function removeLeadingZeros(input) {
-      return Number(input).toString();
-  }
-
-  let finalFirstNumber = removeLeadingZeros(firstDisplayedNumber);
-
+  //  create a function to remove leading zeros: https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/# 
+function removeLeadingZeros(input) {
+  return Number(input).toString();
+}
+  let firstClickedNumber = removeLeadingZeros(firstDisplayBoard.textContent);
+  let finalFirstNumber = removeLeadingZeros(firstClickedNumber);
   firstDisplayBoard.textContent = finalFirstNumber;
 
-  console.log(firstDisplayBoard.firstChild);
-  console.log("first Number:" + firstDisplayedNumber);
+  firstNumber = finalFirstNumber;
+  console.log("first Number:" + firstNumber);
 
   }
+
+
   // after the operator is clicked, clear the board and find a second number. 
 else{  
  
