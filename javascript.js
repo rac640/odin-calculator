@@ -64,10 +64,9 @@ numberButton.forEach((button)=>{
 
 
   let firstClickedNumber = removeLeadingZeros(firstDisplayBoard.textContent);
-  let finalFirstNumber = removeLeadingZeros(firstClickedNumber);
-  firstDisplayBoard.textContent = finalFirstNumber;
+  firstDisplayBoard.textContent = firstClickedNumber;
 
-  firstNumber = finalFirstNumber;
+  firstNumber = firstClickedNumber;
   console.log("first Number:" + firstNumber);
 
   }
@@ -79,8 +78,10 @@ else{
  if (secondNumber == undefined) {firstDisplayBoard.textContent = ""} ;
 
   secondDisplayBoard.appendChild(numberContainer);
-  
-  displayBoard.appendChild(secondDisplayBoard);
+
+  let secondClickedNumber = removeLeadingZeros(numberContainer.textContent);
+  secondDisplayBoard.textContent = secondClickedNumber;
+   displayBoard.appendChild(secondDisplayBoard);
   
   secondNumber = removeLeadingZeros(secondDisplayBoard.textContent);
 
