@@ -103,7 +103,13 @@ additionButton.addEventListener("click", ()=>{
   // if the operator is clicked again and there is a second number present, operate the first and second number.
   
   if (operatorClick == true && secondNumber !== undefined){
-   console.log(operate(Number(firstNumber), operator, Number(secondNumber)));
+
+    // Next step: Put this on the display screen as the firstNumber.
+    firstDisplayBoard.textContent = '';
+   firstDisplayBoard.textContent = operate(Number(firstNumber), operator, Number(secondNumber));
+
+
+
   }
  }
 
