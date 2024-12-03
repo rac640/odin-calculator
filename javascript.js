@@ -59,13 +59,11 @@ numberButton.forEach((button)=>{
   numberContainer.textContent = button.textContent;
   
   if (operatorClick == false ){
+
   firstDisplayBoard.appendChild(numberContainer);
-
-
-
   let firstClickedNumber = removeLeadingZeros(firstDisplayBoard.textContent);
   firstDisplayBoard.textContent = firstClickedNumber;
-
+  
   firstNumber = firstClickedNumber;
   console.log("first Number:" + firstNumber);
 
@@ -77,11 +75,14 @@ else{
  
  if (secondNumber == undefined) {firstDisplayBoard.textContent = ""} ;
 
+
   secondDisplayBoard.appendChild(numberContainer);
 
-  let secondClickedNumber = removeLeadingZeros(numberContainer.textContent);
+  let secondClickedNumber = removeLeadingZeros(secondDisplayBoard.textContent);
+
   secondDisplayBoard.textContent = secondClickedNumber;
-   displayBoard.appendChild(secondDisplayBoard);
+  
+  displayBoard.appendChild(secondDisplayBoard);
   
   secondNumber = removeLeadingZeros(secondDisplayBoard.textContent);
 
@@ -98,6 +99,12 @@ additionButton.addEventListener("click", ()=>{
   console.log(firstNumber);
   operator = "+";
   operatorClick = true;
+
+  // if the operator is clicked again and there is a second number present, operate the first and second number.
+  
+  if (operatorClick == true && secondNumber !== undefined){
+   console.log(operate(Number(firstNumber), operator, Number(secondNumber)));
+  }
  }
 
 );
@@ -124,7 +131,6 @@ operatorClick = true;
 let equalsButton = document.getElementById("equalsButton");
 equalsButton.addEventListener("click", ()=>{
 
-    
   // Used Number: https://stackoverflow.com/questions/14496531/adding-two-numbers-concatenates-them-instead-of-calculating-the-sum 
   let answer = operate(Number(firstNumber), operator, Number(secondNumber));
   let answerBoard = document.createElement("div");
