@@ -105,8 +105,8 @@ additionButton.addEventListener("click", ()=>{
   if (operatorClick == true && secondNumber !== undefined){
 
     // Next step: Put this on the display screen as the firstNumber.
-    firstDisplayBoard.textContent = '';
-   firstDisplayBoard.textContent = operate(Number(firstNumber), operator, Number(secondNumber));
+    displayBoard.textContent = '';
+   displayBoard.textContent = operate(Number(firstNumber), operator, Number(secondNumber));
 
 
 
