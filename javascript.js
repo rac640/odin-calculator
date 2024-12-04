@@ -106,8 +106,11 @@ additionButton.addEventListener("click", ()=>{
 
     // Next step: Put this on the display screen as the firstNumber.
     displayBoard.textContent = '';
-   displayBoard.textContent = operate(Number(firstNumber), operator, Number(secondNumber));
+    secondDisplayBoard.textContent = '';
+   firstDisplayBoard.textContent = operate(Number(firstNumber), operator, Number(secondNumber));
+    displayBoard.appendChild(firstDisplayBoard);
 
+    firstNumber = firstDisplayBoard.textContent;
 
 
   }
