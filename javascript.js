@@ -107,12 +107,18 @@ additionButton.addEventListener("click", ()=>{
     // Next step: Put this on the display screen as the firstNumber.
     displayBoard.textContent = '';
     secondDisplayBoard.textContent = '';
-   firstDisplayBoard.textContent = operate(Number(firstNumber), operator, Number(secondNumber));
+   
+   let result = operate(Number(firstNumber), operator, Number(secondNumber));
+
+   firstDisplayBoard.textContent = result;
+
     displayBoard.appendChild(firstDisplayBoard);
 
     firstNumber = firstDisplayBoard.textContent;
-
-
+  
+    // When second number is entered, it should remove the first number display board 
+    // if (secondNumber !== undefined){firstDisplayBoard.textContent = " "};
+    
   }
  }
 
@@ -141,6 +147,7 @@ let equalsButton = document.getElementById("equalsButton");
 equalsButton.addEventListener("click", ()=>{
 
   // Used Number: https://stackoverflow.com/questions/14496531/adding-two-numbers-concatenates-them-instead-of-calculating-the-sum 
+  displayBoard.textContent = '';
   let answer = operate(Number(firstNumber), operator, Number(secondNumber));
   let answerBoard = document.createElement("div");
   answerBoard.textContent = answer; 
