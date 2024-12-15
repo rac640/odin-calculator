@@ -1,17 +1,44 @@
-div, button{
-border: 3px solid black;
+div, button {
+  border: none; /* Remove default border */
+  outline: none; /* Remove outline on focus */
 }
 
+
+#fullCalculator{
+  background-color: grey;
+  display: flex;
+  margin: auto;
+  width: 50%;
+  height: 50%;
+  flex-direction: column;
+}
+
+
+
 .numberButtons{
-    width: 10px;
-  border: 15px solid green;
-  padding: 50px;
-  margin: 20px;
+  border: 2px solid blue;
+  flex: 1; /* This allows buttons to grow equally */
+  height: 50px; /* Set a fixed height for uniformity */
+  display: flex; /* Center content inside the button */
+  justify-content: center;
+  align-items: center; 
 }
 
 #display{
-
+    background-color: #b2b9b7;
     display: flex;
-    height: 20px;
-    
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    padding: 5px;
+    font-size: 5.5em;
+    font-weight: initial;
+    text-shadow: 1.3px 1.3px #383838;
+    margin: 5px;
+}
+
+#buttonContainer {
+  display: flex; /* Use flexbox for the button container */
+  flex-wrap: wrap; /* Allow wrapping to create multiple lines */
+  width: 200px; /* Set a width for the container */
 }
