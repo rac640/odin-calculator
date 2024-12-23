@@ -1,6 +1,17 @@
-div, button {
-  border: none; /* Remove default border */
-  outline: none; /* Remove outline on focus */
+button {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border:none;
+  background-color: aquamarine;
+  color: black;
+  cursor: pointer;
+margin: 10px;  
+font-size: 50px;
+}
+
+#allButtons{
+  width: 500px;
 }
 
 
@@ -8,22 +19,19 @@ div, button {
   background-color: grey;
   display: flex;
   margin: auto;
-  width: 50%;
+  width: 550px;
   height: 50%;
   flex-direction: column;
   padding: 10px;
+  border-radius: 50px;
 }
 
 
 
-.numberButtons{
-  border: 2px solid blue;
-  flex: 1; /* This allows buttons to grow equally */
-  height: 50px; /* Set a fixed height for uniformity */
-  display: flex; /* Center content inside the button */
-  justify-content: center;
-  align-items: center; 
-}
+
+
+
+
 
 /* Taken from: https://mrbuddh4.github.io/calculator/  */
 #display{
@@ -32,11 +40,15 @@ div, button {
     flex-direction: column;
     justify-content: space-around;
     align-items: flex-end;
-    padding: 5px;
-    font-size: 5.5em;
+    padding: 10px;
+    font-size:50px;
     font-weight: initial;
     text-shadow: 1.3px 1.3px #383838;
     margin: 5px;
+    width: 500px;
+    height: 150px;
+    border-radius: 50px;
+
 }
 
 #buttonContainer {
