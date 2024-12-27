@@ -128,18 +128,70 @@ let subtractionButton = document.getElementById("subtractionButton");
 subtractionButton.addEventListener("click", ()=>{
   operator = "-";
   operatorClick = true;
+
+  
+  if (operatorClick == true && secondNumber !== undefined){
+
+    // Next step: Put this on the display screen as the firstNumber.
+    displayBoard.textContent = '';
+    secondDisplayBoard.textContent = '';
+   
+   let result = operate(Number(firstNumber), operator, Number(secondNumber));
+
+   firstDisplayBoard.textContent = result;
+
+    displayBoard.appendChild(firstDisplayBoard);
+
+    firstNumber = firstDisplayBoard.textContent;
+  }
+
+
 });
 
 let multiplyButton = document.getElementById("multiplicationButton");
 multiplyButton.addEventListener("click",()=> {
 operator = "*";
 operatorClick = true;
+
+
+if (operatorClick == true && secondNumber !== undefined){
+
+  // Next step: Put this on the display screen as the firstNumber.
+  displayBoard.textContent = '';
+  secondDisplayBoard.textContent = '';
+ 
+ let result = operate(Number(firstNumber), operator, Number(secondNumber));
+
+ firstDisplayBoard.textContent = result;
+
+  displayBoard.appendChild(firstDisplayBoard);
+
+  firstNumber = firstDisplayBoard.textContent;
+}
+
 });
 
 let divisionButton = document.getElementById("divisionButton");
 divisionButton.addEventListener("click", ()=> {
 operator = "/";
 operatorClick = true;
+
+
+if (operatorClick == true && secondNumber !== undefined){
+
+  // Next step: Put this on the display screen as the firstNumber.
+  displayBoard.textContent = '';
+  secondDisplayBoard.textContent = '';
+ 
+ let result = operate(Number(firstNumber), operator, Number(secondNumber));
+
+ firstDisplayBoard.textContent = result;
+
+  displayBoard.appendChild(firstDisplayBoard);
+
+  firstNumber = firstDisplayBoard.textContent;
+}
+
 
 });
 
