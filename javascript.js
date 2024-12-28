@@ -12,4 +12,12 @@ numberButtons.forEach(button => {
 
 
 // Step 2: Clearing the Display.
+const clearButton = document.getElementById("clearButton");
+
+// Function to clear display.
+function clearDisplay(){
+  display.textContent = "";
+}
+// When the clearButton is clicked, it will run the clearDisplay function. 
+clearButton.addEventListener("click",clearDisplay );
 
