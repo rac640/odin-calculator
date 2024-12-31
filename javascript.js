@@ -1,103 +1,35 @@
-// TAKEN FROM PERPLEXITY.AI ; NEED TO REVIEW THIS CODE LINE-BY-LINE 
+// this currentNumber variable  will serve as a "picture," capturing the current display content. 
+let currentNumber ="";
+
+// Step 1: Display number on board when button is clicked. 
+const displayBoard = document.querySelector("#display");
+const numberButtons = document.querySelectorAll(".numberButtons");
 
 
-// Get the display element
-const display = document.getElementById('display');
+numberButtons.forEach((button)=>{
+    button.addEventListener("click", ()=>{
 
-// Variables to store the current input and operation
-let currentInput = '';
-let previousInput = '';
-let operation = null;
+        putNumberOnDisplay(button.textContent);
+    });
+ 
+});
 
-// Function to update the display
-function updateDisplay() {
-    display.textContent = currentInput || '0';
-}
 
-// Function to handle number button clicks
-function handleNumberClick(number) {
+// Step 2: Create a function: When a number button is clicked, it should add a number to the display. 
+
+function putNumberOnDisplay(buttonNumber){
+currentNumber =  currentNumber + buttonNumber;
+displayBoard.textContent = currentNumber;
+
     
-  if (currentInput === '0') {
-
-// Replace that zero with the new number you pressed (Like erasing a '0' and writing your new number instead)
-        currentInput = number;
-
-    } else if (currentInput.length < 7){
-    // Add the new number to the end (Ex: Writing 5 after 23 becomes 235)
-
-        currentInput += number;
-    }
-    updateDisplay();
 }
 
-// Function to handle operator clicks
-function handleOperatorClick(op) {
-    if (currentInput !== '') {
-        if (previousInput !== '') {
-            calculate();
-        }
-        previousInput = currentInput;
-        currentInput = '';
-        operation = op;
-    }
+
+// Step 3: create a function: Capture the currentNumber as the firstNumber when the operator is clicked. 
+
+const operatorButtons = document.querySelectorAll(".operator");
+console.log(operatorButtons);
+
+function captureFirstNumber(){
+
 }
-
-// Function to perform calculation
-function calculate() {
-    let result;
-    const prev = parseFloat(previousInput);
-    const current = parseFloat(currentInput);
-    if (isNaN(prev) || isNaN(current)) return;
-    switch (operation) {
-        case '+':
-            result = prev + current;
-            break;
-        case '-':
-            result = prev - current;
-            break;
-        case '*':
-            result = prev * current;
-            break;
-        case '/':
-            result = prev / current;
-            break;
-        default:
-            return;
-    }
-    currentInput = result.toString();
-    operation = null;
-    previousInput = '';
-    updateDisplay();
-}
-
-// Add event listeners to number buttons
-document.querySelectorAll('.numberButtons').forEach(button => {
-    button.addEventListener('click', () => handleNumberClick(button.textContent));
-});
-
-// Add event listeners to operator buttons
-document.querySelectorAll('.operator').forEach(button => {
-    button.addEventListener('click', () => handleOperatorClick(button.textContent.trim()));
-});
-
-// Add event listener to equals button
-document.getElementById('equalsButton').addEventListener('click', calculate);
-
-// Add event listener to clear button
-document.getElementById('clearButton').addEventListener('click', () => {
-    currentInput = '';
-    previousInput = '';
-    operation = null;
-    updateDisplay();
-});
-
-// Add event listener to decimal button
-document.getElementById('decimalButton').addEventListener('click', () => {
-    if (!currentInput.includes('.')) {
-        currentInput += '.';
-        updateDisplay();
-    }
-});
-
-// Initial display update
-updateDisplay();
