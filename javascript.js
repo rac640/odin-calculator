@@ -29,7 +29,7 @@ numberButtons.forEach((button)=>{
 // Step 2: Create a function: When a number button is clicked, it should add a number to the display. 
 
 function putNumberOnDisplay(buttonNumber){
-currentNumber =  currentNumber + buttonNumber;
+currentNumber =  parseInt(currentNumber + buttonNumber);
 displayBoard.textContent = currentNumber;
 
     
@@ -121,3 +121,10 @@ function captureResult(){
 // Step 5: Chaining together operations 
 //  Look at operatorButtons part. Function to run after operator is clicked: if there is a firstNum, then run the captureResult function. 
 
+
+
+// Step 6: Eliminating zeros in the front. 
+// Look at putNumbersOnDisplay function. Used parseInt: https://www.tutorialspoint.com/how-to-remove-leading-zeros-from-a-number-in-javascript 
+
+// Step 7: Getting the Decimal to work
+// function: Is there a decimal in the currentNumber? If yes, then change variable. 
