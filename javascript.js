@@ -3,6 +3,7 @@ let currentNumber ="";
 
 // the firstNumber and secondNumber are  "pictures" of the current number. 
 let firstNumber = "";
+let secondNumber = "";
 
 // operator Variable will be used in finding the first and second numbers. 
 let operator = "";
@@ -44,8 +45,23 @@ const operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((button) =>{
     button.addEventListener("click", ()=>{
 
-        operator = button.textContent;
-        captureFirstNumber();
+        // if there's no first number, then "take a picture" of the currentNumber and set it as the first number. Store the operator as well. 
+        if (firstNumber ==""){
+            captureFirstNumber();
+            operator = button.textContent;
+
+        }
+
+    //  If there is a first number, then capture the second number and result, and use the result as the first number. Store the operator. 
+        else{
+            captureSecondNumber();
+            captureResult();
+            firstNumber = result;
+            displayBoard.textContent = firstNumber;
+            operator = button.textContent;
+        }
+        
+    
     });
 
 });
@@ -82,21 +98,26 @@ function captureSecondNumber(){
 
 function captureResult(){
 
-    if (operator = "+"){
+    if (operator == " +"){
         result = parseFloat(firstNumber) + parseFloat(secondNumber);
         return result;
     }
-    else if (operator = "-"){
+    else if (operator == " -"){
         result = parseFloat(firstNumber) - parseFloat(secondNumber);
         return result;
     }
-    else if (operator ="/"){
+    else if (operator ==" /"){
         result = parseFloat(firstNumber) / parseFloat(secondNumber);
         return result;
     }
-    else if (operator = "*"){
+    else if (operator == " *"){
         result = parseFloat(firstNumber) * parseFloat(secondNumber);
         return result;
 
     }
 };
+
+
+// Step 5: Chaining together operations 
+//  Look at operatorButtons part. Function to run after operator is clicked: if there is a firstNum, then run the captureResult function. 
+
