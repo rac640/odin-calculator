@@ -131,4 +131,5 @@ function captureResult(){
 // Step 7: Getting the Decimal to work
 //Solution 1: Is there a decimal in the currentNumber? If yes, then change variable. 
 // Solution 2: Does the displayBoard show a decimal? If not, then you can add one decimal. 
+// function: putDecimalOnDisplay; global variable: decimalIsOnDisplay = false;  currentNumber = currentNumber + decimalOnDisplay, then change decimalIsOnDisplay to true. 
 // use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
