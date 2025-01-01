@@ -126,5 +126,9 @@ function captureResult(){
 // Step 6: Eliminating zeros in the front. 
 // Look at putNumbersOnDisplay function. Used parseInt: https://www.tutorialspoint.com/how-to-remove-leading-zeros-from-a-number-in-javascript 
 
+
+
 // Step 7: Getting the Decimal to work
-// function: Is there a decimal in the currentNumber? If yes, then change variable. 
+//Solution 1: Is there a decimal in the currentNumber? If yes, then change variable. 
+// Solution 2: Does the displayBoard show a decimal? If not, then you can add one decimal. 
+// use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
