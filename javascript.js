@@ -133,3 +133,32 @@ function captureResult(){
 // Solution 2: Does the displayBoard show a decimal? If not, then you can add one decimal. 
 // function: putDecimalOnDisplay; global variable: decimalIsOnDisplay = false;  currentNumber = currentNumber + decimalOnDisplay, then change decimalIsOnDisplay to true. 
 // use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
+//  When the decimal button is pressed, it should scan the display to see if there is already a decimal. If there isn't, then it should put one (currentNumber + "decimal"), and then change decimalIsOnDisplay. 
+
+decimalIsPresent = false; 
+
+const decimalButton = document.querySelector("#decimalButton");
+decimalButton.addEventListener("click", ()=>{
+//    Scan the display board to see if there is a "." If there is none, then put one. 
+    if (!displayBoard.textContent.includes(".")){
+    putDecimalOnDisplay(currentNumber);
+    }
+    
+});
+
+function putDecimalOnDisplay(selectedNumber){
+   console.log( selectedNumber = selectedNumber + "." + 
+
+    numberButtons.forEach((button)=>{
+        button.addEventListener("click", ()=>{
+    
+            putNumberOnDisplay(button.textContent);
+        });
+     
+    });
+
+   );
+// This function should take in the current number and add a "."
+
+}
+
