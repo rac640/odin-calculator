@@ -29,9 +29,8 @@ numberButtons.forEach((button)=>{
 // Step 2: Create a function: When a number button is clicked, it should add a number to the display. 
 
 function putNumberOnDisplay(buttonNumber){
-currentNumber =  parseInt(currentNumber + buttonNumber);
-displayBoard.textContent = currentNumber;
-
+currentNumber =  String(currentNumber + buttonNumber);
+displayBoard.textContent = currentNumber; 
     
 }
 
@@ -129,13 +128,9 @@ function captureResult(){
 
 
 // Step 7: Getting the Decimal to work
-//Solution 1: Is there a decimal in the currentNumber? If yes, then change variable. 
-// Solution 2: Does the displayBoard show a decimal? If not, then you can add one decimal. 
-// function: putDecimalOnDisplay; global variable: decimalIsOnDisplay = false;  currentNumber = currentNumber + decimalOnDisplay, then change decimalIsOnDisplay to true. 
-// use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
-//  When the decimal button is pressed, it should scan the display to see if there is already a decimal. If there isn't, then it should put one (currentNumber + "decimal"), and then change decimalIsOnDisplay. 
+// Does the displayBoard show a decimal? If not, then you can add one decimal. Use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
 
-decimalIsPresent = false; 
+//  When the decimal button is pressed, it should scan the display to see if there is already a decimal. If there isn't, then it should run function to put one(currentNumber + "decimal"), and then change decimalIsOnDisplay. 
 
 const decimalButton = document.querySelector("#decimalButton");
 decimalButton.addEventListener("click", ()=>{
@@ -146,19 +141,16 @@ decimalButton.addEventListener("click", ()=>{
     
 });
 
+
+// This function should take in the current number and add a "." to it; then, let the user input more numbers. 
+
+
 function putDecimalOnDisplay(selectedNumber){
-   console.log( selectedNumber = selectedNumber + "." + 
 
-    numberButtons.forEach((button)=>{
-        button.addEventListener("click", ()=>{
-    
-            putNumberOnDisplay(button.textContent);
-        });
-     
-    });
+selectedNumber = selectedNumber + "." ;
 
-   );
-// This function should take in the current number and add a "."
+displayBoard.textContent = selectedNumber;
 
 }
+
 
