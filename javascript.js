@@ -159,3 +159,8 @@ clearButton.addEventListener("click", ()=>{
     currentNumber = "";
     displayBoard.textContent ="";
 });
+
+
+// Step 9: Click Operator only once 
+// Problem: When I click the operator two times, it gives NaN (Ex: "5++" gives me "NaN")
+// If secondNumber is undefined, then disable the operatorButton
