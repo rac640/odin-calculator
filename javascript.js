@@ -128,6 +128,7 @@ function captureResult(){
 
 
 // Step 7: Getting the Decimal to work
+// Look at numberButtons part. Should add a decimal.
 // Does the displayBoard show a decimal? If not, then you can add one decimal. Use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
 
 //  When the decimal button is pressed, it should scan the display to see if there is already a decimal. If there isn't, then it should run function to put one(currentNumber + "decimal"), and then change decimalIsOnDisplay. 
@@ -143,14 +144,5 @@ decimalButton.addEventListener("click", ()=>{
 
 
 // This function should take in the current number and add a "." to it; then, let the user input more numbers. 
-
-
-function putDecimalOnDisplay(selectedNumber){
-
-selectedNumber = selectedNumber + "." ;
-
-displayBoard.textContent = selectedNumber;
-
-}
 
 
