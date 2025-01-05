@@ -139,15 +139,23 @@ function captureResult(){
 
 
 // Step 7: Getting the Decimal to work
-// Look at numberButtons part. I put the decimal button into the numberButton class. 
+// Look at numberButtons part. I put the decimal button into the numberButton class, and gave it an ID as well.  
 // Only add decimal button once: Does the displayBoard show a decimal? If not, then you can add one decimal. Use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
-
 
 // Target the decimal Button (It has both a class and an ID). When the display already has a ".", then it should disable the button. 
 let decimalButton = document.querySelector("#decimalButton");
 console.log(decimalButton);
 
 
-// This function should take in the current number and add a "." to it; then, let the user input more numbers. 
+// Step 8: Clearing the board 
+// when the clear button is clicked, clear everything: FirstNumber, Operator, secondNumber, currentNumber, displayBoard.\\\
 
+let clearButton = document.querySelector("#clearButton");
 
+clearButton.addEventListener("click", ()=>{
+    firstNumber ="";
+    secondNumber = "";
+    operator = "";
+    currentNumber = "";
+    displayBoard.textContent ="";
+});
