@@ -22,6 +22,17 @@ numberButtons.forEach((button)=>{
     button.addEventListener("click", ()=>{
 
         putNumberOnDisplay(button.textContent);
+        // if variable is true, then the decimalButton should be re-enabled.
+        let decimalOnDisplay = false;  
+        if (decimalOnDisplay == false){
+            decimalButton.disabled = false;
+        }
+        // if the displayBoard has a decimal, then disable the decimalButton. 
+        if (displayBoard.textContent.includes(".")){
+            // Disabling a button: https://stackoverflow.com/questions/13831601/disabling-and-enabling-a-html-input-button 
+            decimalButton.disabled =true;
+        }
+
     });
  
 });
@@ -128,19 +139,13 @@ function captureResult(){
 
 
 // Step 7: Getting the Decimal to work
-// Look at numberButtons part. Should add a decimal.
-// Does the displayBoard show a decimal? If not, then you can add one decimal. Use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
+// Look at numberButtons part. I put the decimal button into the numberButton class. 
+// Only add decimal button once: Does the displayBoard show a decimal? If not, then you can add one decimal. Use .includes method: https://www.w3schools.com/jsref/jsref_includes.asp 
 
-//  When the decimal button is pressed, it should scan the display to see if there is already a decimal. If there isn't, then it should run function to put one(currentNumber + "decimal"), and then change decimalIsOnDisplay. 
 
-const decimalButton = document.querySelector("#decimalButton");
-decimalButton.addEventListener("click", ()=>{
-//    Scan the display board to see if there is a "." If there is none, then put one. 
-    if (!displayBoard.textContent.includes(".")){
-    putDecimalOnDisplay(currentNumber);
-    }
-    
-});
+// Target the decimal Button (It has both a class and an ID). When the display already has a ".", then it should disable the button. 
+let decimalButton = document.querySelector("#decimalButton");
+console.log(decimalButton);
 
 
 // This function should take in the current number and add a "." to it; then, let the user input more numbers. 
