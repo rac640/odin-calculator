@@ -60,6 +60,7 @@ operatorButtons.forEach((button) =>{
             captureFirstNumber();
             operator = button.textContent;
 
+
         }
 
     //  If there is a first number, then capture the second number and result, and use the result as the first number. Store the operator. 
@@ -69,8 +70,9 @@ operatorButtons.forEach((button) =>{
             firstNumber = result;
             displayBoard.textContent = firstNumber;
             operator = button.textContent;
+
         }
-        
+      
     
     });
 
@@ -163,4 +165,22 @@ clearButton.addEventListener("click", ()=>{
 
 // Step 9: Click Operator only once 
 // Problem: When I click the operator two times, it gives NaN (Ex: "5++" gives me "NaN")
-// If secondNumber is undefined, then disable the operatorButton
+// Solution: Set a counter for the operatorButton. 
+// Example: If the firstNumber is captured, then put count to count++. If the Count == 1, then disable the button. 
+// If SecondNumber is undefined, then re-enable the operatorButton. 
+
+
+/*
+
+On click to work only once, from: https://www.reddit.com/r/learnjavascript/comments/ji2m7q/button_onclick_only_to_work_once/ 
+
+make sure the callback function has a name and then in the callback function simply remove the event listener
+
+const button = document.querySelector('button');
+const cb = (e) => {
+   //do your stuff
+   e.target.removeEventListener('click', cb);
+}
+button.addEventListener('click', cb);
+
+*/
