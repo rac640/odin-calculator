@@ -55,14 +55,15 @@ const operatorButtons = document.querySelectorAll(".operator");
 operatorButtons.forEach((button) =>{
     button.addEventListener("click", ()=>{
 
+       
         // if there's no first number, then "take a picture" of the currentNumber and set it as the first number. Store the operator as well. 
         if (firstNumber ==""){
             captureFirstNumber();
             operator = button.textContent;
-
-
         }
-
+        
+        
+        
     //  If there is a first number, then capture the second number and result, and use the result as the first number. Store the operator. 
         else{
             captureSecondNumber();
@@ -70,10 +71,10 @@ operatorButtons.forEach((button) =>{
             firstNumber = result;
             displayBoard.textContent = firstNumber;
             operator = button.textContent;
-
         }
-      
-    
+        
+
+        
     });
 
 });
@@ -85,6 +86,7 @@ function captureFirstNumber(){
     console.log(firstNumber);
     currentNumber = '';
     displayBoard.textContent = '';
+
 }
 
 
@@ -110,10 +112,16 @@ function captureSecondNumber(){
 
 function captureResult(){
 
-    if (operator == " +"){
-        result = parseFloat(firstNumber) + parseFloat(secondNumber);
+
+    if (secondNumber ==""){
+        result = parseFloat(firstNumber);
         return result;
     }
+    if (operator == " +"){
+       
+        result = parseFloat(firstNumber) + parseFloat(secondNumber);
+        return result;
+            }
     else if (operator == " -"){
         result = parseFloat(firstNumber) - parseFloat(secondNumber);
         return result;
@@ -137,7 +145,8 @@ function captureResult(){
 
 // Step 6: Eliminating zeros in the front. 
 // Look at putNumbersOnDisplay function. Used parseInt: https://www.tutorialspoint.com/how-to-remove-leading-zeros-from-a-number-in-javascript 
-
+// NEED TO RE-DO THIS PART. 
+// IDEA: Check currentNumber string to see if zero is the first number. If it is, then disable the zero button. If the first number is not zero, then enable the zero button is Use .indexOf : https://www.geeksforgeeks.org/how-to-find-the-index-of-specific-character-in-a-string-in-javascript/
 
 
 // Step 7: Getting the Decimal to work
@@ -146,7 +155,6 @@ function captureResult(){
 
 // Target the decimal Button (It has both a class and an ID). When the display already has a ".", then it should disable the button. 
 let decimalButton = document.querySelector("#decimalButton");
-console.log(decimalButton);
 
 
 // Step 8: Clearing the board 
@@ -165,22 +173,26 @@ clearButton.addEventListener("click", ()=>{
 
 // Step 9: Click Operator only once 
 // Problem: When I click the operator two times, it gives NaN (Ex: "5++" gives me "NaN")
-// Solution: Set a counter for the operatorButton. 
-// Example: If the firstNumber is captured, then put count to count++. If the Count == 1, then disable the button. 
-// If SecondNumber is undefined, then re-enable the operatorButton. 
+
+// Solution: Make another event listener (for my own simplicity); if displayBoard has result, then it should be disabled. If not, re-enable. 
+
+// operatorButtons.forEach((button) =>{
+//     button.addEventListener("click", ()=>{
+
+    
+//         if (displayBoard.textContent.includes(result)) {
+//             button.disabled = true;
+//         }
+//          else {
+//             button.disabled = false;
+//         }
+        
+//     });
+
+// });
 
 
-/*
 
-On click to work only once, from: https://www.reddit.com/r/learnjavascript/comments/ji2m7q/button_onclick_only_to_work_once/ 
 
-make sure the callback function has a name and then in the callback function simply remove the event listener
 
-const button = document.querySelector('button');
-const cb = (e) => {
-   //do your stuff
-   e.target.removeEventListener('click', cb);
-}
-button.addEventListener('click', cb);
 
-*/
