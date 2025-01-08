@@ -40,8 +40,21 @@ numberButtons.forEach((button)=>{
 // Step 2: Create a function: When a number button is clicked, it should add a number to the display. 
 
 function putNumberOnDisplay(buttonNumber){
+
+
 currentNumber =  String(currentNumber + buttonNumber);
+
+
+// turn the currentNumber into an array, to check if there is a zero in the front. 
+let  currentNumberArray = currentNumber.split("");
+console.log(currentNumberArray);
+
+// If the first element of the currentNumberArray is zero, then empty the array and set the displayBoard to zero. 
+
+
 displayBoard.textContent = currentNumber; 
+
+console.log(currentNumberArray);
     
 }
 
