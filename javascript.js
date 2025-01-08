@@ -112,11 +112,12 @@ function captureSecondNumber(){
 
 function captureResult(){
 
-
+// If there is no second Number, then just return the first number as the result (Ex: 5++)
     if (secondNumber ==""){
         result = parseFloat(firstNumber);
         return result;
     }
+
     if (operator == " +"){
        
         result = parseFloat(firstNumber) + parseFloat(secondNumber);
@@ -174,22 +175,7 @@ clearButton.addEventListener("click", ()=>{
 // Step 9: Click Operator only once 
 // Problem: When I click the operator two times, it gives NaN (Ex: "5++" gives me "NaN")
 
-// Solution: Make another event listener (for my own simplicity); if displayBoard has result, then it should be disabled. If not, re-enable. 
-
-// operatorButtons.forEach((button) =>{
-//     button.addEventListener("click", ()=>{
-
-    
-//         if (displayBoard.textContent.includes(result)) {
-//             button.disabled = true;
-//         }
-//          else {
-//             button.disabled = false;
-//         }
-        
-//     });
-
-// });
+// Solution: Look at captureResult function: If there is no second Number, then  return the first number as the result (Ex: 5++)
 
 
 
