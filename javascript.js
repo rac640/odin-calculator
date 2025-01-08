@@ -182,13 +182,12 @@ clearButton.addEventListener("click", ()=>{
 
 // Step 9: Click Operator only once 
 // Problem: When I click the operator two times, it gives NaN (Ex: "5++" gives me "NaN")
-
 // Solution: Look at captureResult function: If there is no second Number, then  return the first number as the result (Ex: 5++)
 
 
-
 // Problem: Pressing equals twice or more gives me the firstNumber (Ex: 5+3= 8; then, when pressing = again, it gives me 5). 
-
 // Solution: Look at captureResult() function: If the secondNumber is "", check to see if there is a result;  if there is a result, then print the result. Else, the first number will be the result. 
+
+// Problem: Getting rid of zeros in front (Ex: typing in "00000" should show "0" until I press "7", when it should show "7").
 
 
