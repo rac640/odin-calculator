@@ -114,9 +114,17 @@ function captureResult(){
 
 // If there is no second Number, then just return the first number as the result (Ex: 5++)
     if (secondNumber ==""){
+        // if there is a result, then just print the result. 
+        if (result !==""){
+            return result;
+        }
+        else{
+
         result = parseFloat(firstNumber);
         return result;
     }
+    }
+   
 
     if (operator == " +"){
        
@@ -179,6 +187,8 @@ clearButton.addEventListener("click", ()=>{
 
 
 
+// Problem: Pressing equals twice or more gives me the firstNumber (Ex: 5+3= 8; then, when pressing = again, it gives me 5). 
 
+// Solution: Look at captureResult() function: If the secondNumber is "", check to see if there is a result;  if there is a result, then print the result. Else, the first number will be the result. 
 
 
