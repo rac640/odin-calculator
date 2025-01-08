@@ -47,8 +47,10 @@ currentNumber =  String(currentNumber + buttonNumber);
 
 // turn the currentNumber into an array, to check if there is a zero in the front. 
 let  currentNumberArray = currentNumber.split("");
-console.log(currentNumberArray);
 
+    
+
+console.log(currentNumberArray);
 // If the first element of the currentNumberArray is zero, then empty the array and set the displayBoard to zero. 
 
 
@@ -202,5 +204,9 @@ clearButton.addEventListener("click", ()=>{
 // Solution: Look at captureResult() function: If the secondNumber is "", check to see if there is a result;  if there is a result, then print the result. Else, the first number will be the result. 
 
 // Problem: Getting rid of zeros in front (Ex: typing in "00000" should show "0" until I press "7", when it should show "7").
+
+
+/*Look at putNumbersOnDisplay Function:This should be useful to help remove the leading 
+zeros from the array: https://www.tutorialspoint.com/remove-leading-zeros-in-array-javascript#:~:text=To%20remove%20the%20leading%20zeros%20in%20the%20array%20we%20have,()%20method%20will%20remove%20them. */
 
 
