@@ -214,3 +214,7 @@ clearButton.addEventListener("click", ()=>{
 
 // Problem: Getting rid of zeros in front (Ex: typing in "00000" should show "0" until I press "7", when it should show "7").
 // Solution: Look at putNumbersOnDisplay Function: Used JavaScript Loop: https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/
+
+
+// Problem: Dividing by zero. 
+// Solution: Look at captureResult() function, under if operator == /. 
