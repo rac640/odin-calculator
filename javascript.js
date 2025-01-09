@@ -45,10 +45,21 @@ function putNumberOnDisplay(buttonNumber){
 currentNumber =  String(currentNumber + buttonNumber);
 
 
-// turn the currentNumber into an array, to check if there is a zero in the front. 
-let  currentNumberArray = currentNumber.split("");
+// Utilized the function to remove leading zeros: https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/#using-javascript-loops 
+function removeLeadingZerosIterative(str) {
+    let i = 0;
+    while (i < str.length && str[i] === '0') {
+        i++;
+    }
+    // If the entire string consists of zeros, return '0'
+    if (i === str.length) {
+        return '0';
+    }
+    return str.substring(i);
+}
 
-console.log(currentNumberArray);
+currentNumber = removeLeadingZerosIterative(currentNumber);
+
 // If the first element of the currentNumberArray is zero, then empty the array and set the displayBoard to zero. 
 
 
@@ -202,8 +213,4 @@ clearButton.addEventListener("click", ()=>{
 // Solution: Look at captureResult() function: If the secondNumber is "", check to see if there is a result;  if there is a result, then print the result. Else, the first number will be the result. 
 
 // Problem: Getting rid of zeros in front (Ex: typing in "00000" should show "0" until I press "7", when it should show "7").
-
-/*Look at putNumbersOnDisplay Function:This should be useful to help remove the leading 
-zeros from the array: https://www.tutorialspoint.com/remove-leading-zeros-in-array-javascript#:~:text=To%20remove%20the%20leading%20zeros%20in%20the%20array%20we%20have,()%20method%20will%20remove%20them. */
-
-//  FIRST: Test this one out on the string. https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/
+// Solution: Look at putNumbersOnDisplay Function: Used JavaScript Loop: https://www.geeksforgeeks.org/javascript-program-to-remove-leading-zeros/
