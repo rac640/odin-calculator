@@ -119,9 +119,15 @@ function captureFirstNumber(){
 const equalsButton = document.querySelector("#equalsButton");
 
 equalsButton.addEventListener("click",()=>{
+    if (firstNumber ==""){
+        result = "";
+    }
+    else{
+        equalsButton.disabled = false;
     captureSecondNumber();
     captureResult();
     displayBoard.textContent = result;
+    }
 
 });
 
@@ -225,3 +231,7 @@ clearButton.addEventListener("click", ()=>{
 
 // Problem: Dividing by zero. 
 // Solution: Look at captureResult() function, under if operator == /. 
+
+// Problem: clicking equals before typing in firstNumber and secondNumber gives NaN. 
+// Solution: On equalsButton event listener:  If there is no firstNumber, then the result should be "".
+
