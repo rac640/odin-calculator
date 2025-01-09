@@ -160,8 +160,15 @@ function captureResult(){
         return result;
     }
     else if (operator ==" /"){
+        // If dividing by zero, then displayboard.textcontent should say to try again, and then set the result to the displayboard text content. 
+        if (secondNumber ==0){
+            displayBoard.textContent = "Try again!";
+            result = displayBoard.textContent;
+        }
+        else{
         result = parseFloat(firstNumber) / parseFloat(secondNumber);
         return result;
+        }
     }
     else if (operator == " *"){
         result = parseFloat(firstNumber) * parseFloat(secondNumber);
