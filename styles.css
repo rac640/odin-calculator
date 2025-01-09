@@ -33,7 +33,7 @@ button {
 
 
 
-/* Taken from: https://mrbuddh4.github.io/calculator/ and edited accordingly */
+/* Taken from: https://mrbuddh4.github.io/calculator/ (calculator presented in the Odin Project) and edited accordingly */
 #display{
     background-color: #b2b9b7;
     display: flex;
